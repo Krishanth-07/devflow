@@ -3,6 +3,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
 
+  "css.lint.unknownAtRules": "ignore",
+
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.addMissingImports": "explicit"
@@ -24,5 +26,19 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "js/ts.tsdk.path": "node_modules/typescript/lib"
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.vscode": true,
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/next-env.d.ts": true,
+    "**/.prettierrc": true,
+    "**/.prettierignore": true
+  }
 }
