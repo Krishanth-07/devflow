@@ -3,7 +3,9 @@ import { Geist, Geist_Mono, Inter } from 'next/font/google'
 import './globals.css'
 import ThemeProvider from '@/context/Theme'
 import { cn } from '@/lib/utils'
-import Navbar from '@/components/navigation/navbar'
+import { Toaster } from 'sonner'
+
+
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -26,11 +28,12 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  
   return (
     <html
       lang="en"
@@ -44,12 +47,16 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
+      
       <body className="min-h-full flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar></Navbar>
           {children}
         </ThemeProvider>
+        <Toaster></Toaster>
       </body>
+      
+      
+      
     </html>
   )
 }
